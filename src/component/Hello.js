@@ -4,7 +4,7 @@ import UserName from "./UseName";
 
 export default function Hello({age}){
     const [name, setName] = useState("Mike");
-    //const [age, setAge] = useState(props.age);
+    //const [age, setAge] = useState(props.age); 
     const msg = age > 19 ? "111": "22";
 
     return(
