@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Day from './component/Day';
 import DayList from './component/DayList';

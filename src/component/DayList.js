@@ -1,20 +1,23 @@
-import { useEffect, useState } from "react";
+import React from 'react';
+//import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 // import dummy from "../db/data.json";
 
 export default function DayList(){
+    const days = useFetch("http://localhost:3001/days");
     // console.log(dummy);
-    const [days, setDays] = useState([]);
+    // const [days, setDays] = useState([]);
 
-    useEffect(()=>{
-        fetch('http://localhost:3001/days')
-        .then(res => {
-            return res.json()
-        })
-        .then(data =>{
-            setDays(data);
-        })
-    }, []);//의존성배열
+    // useEffect(()=>{
+    //     fetch('http://localhost:3001/days')
+    //     .then(res => {
+    //         return res.json()
+    //     })
+    //     .then(data =>{
+    //         setDays(data);
+    //     })
+    // }, []);//의존성배열
 
 
     return (
