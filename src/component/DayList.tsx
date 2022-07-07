@@ -4,8 +4,13 @@ import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 // import dummy from "../db/data.json";
 
+export interface IDay{
+    id: number;
+    day: number;
+}
+
 export default function DayList(){
-    const days = useFetch("http://localhost:3001/days");
+    const days : IDay[] = useFetch("http://localhost:3001/days");
     // console.log(dummy);
     // const [days, setDays] = useState([]);
 
@@ -18,6 +23,10 @@ export default function DayList(){
     //         setDays(data);
     //     })
     // }, []);//의존성배열
+
+    if(days.length === 0) {
+        return <span>Loadding...</span>;
+    }
 
 
     return (
